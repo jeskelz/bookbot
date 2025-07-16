@@ -2,7 +2,7 @@ import sys
 import datetime  # U1 - imports datetime for Report#
 import os  # lets code interact with OS
 
-from stats import get_num_words, get_lower_count, sort_char_counts, get_top_words
+from stats1 import get_num_words, get_lower_count, sort_char_counts, get_top_words
 
 if len(sys.argv) != 2:
     print("Usage: python3 main.py <path_to_book>")
@@ -30,7 +30,7 @@ def get_book_text(path):
                     
         sys.exit(1)
 
-def main(): # report collection for output
+def main1(): # report collection for output
     book_path = sys.argv[1]
     book_filename = os.path.basename(book_path)         # gets bookname
     book_name = os.path.splitext(book_filename)[0]      # gets removes bookname extension
@@ -85,4 +85,4 @@ def main(): # report collection for output
         for line in report_lines:
             f.write(line + "\n")
 
-main()
+main1()
