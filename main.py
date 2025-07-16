@@ -12,7 +12,7 @@ def get_book_text(path):
     with open(path) as f:
         return f.read() # read the contents of a file into a string
 
-# get Report file name
+# get report file name
 def get_next_report_filename(prefix="report_", suffix=".txt"):
     existing = [f for f in os.listdir() if f.startswith(prefix) and f.endswith(suffix)]
     nums = []
