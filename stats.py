@@ -13,6 +13,7 @@ def get_char_count(text):
             counts[char] = 1
     return counts
 
+
 def sort_characters(counts_dict):
     # Convert to a list of {"char": x, "num": y} dicts
     sorted_list = []
@@ -26,3 +27,14 @@ def sort_characters(counts_dict):
 
     sorted_list.sort(reverse=True, key=sort_on)
     return sorted_list
+
+
+# Top 10 Most Common Words
+from collections import Counter
+import re
+
+def get_top_words(text, n=10):
+    words = re.findall(r'\b\w+\b', text.lower())  # Clean and lowercase words
+    word_counts = Counter(words)
+    return word_counts.most_common(n)
+
